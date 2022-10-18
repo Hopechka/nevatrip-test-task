@@ -1,11 +1,27 @@
+.cardWrapper {
+  @apply w-full flex flex-col rounded-2xl border-solid border-[0.3px]
+   border-b-grey mb-[30px] mx-auto relative
+  md:flex-row md:flex-nowrap min-h-[368px] md:max-w-[1106px] md:pr-12;
+}
+
 .timeMenu {
-  @apply flex flex-wrap gap-2 overflow-hidden pr-6 pl-12;
+  @apply flex flex-wrap gap-2 overflow-hidden pr-6 pl-12
+  md:px-0 md:max-w-[340px] xl:relative xl:-top-11 xl:left-[205px];
 }
 
 .open {
-  @apply h-fit;
+  @apply h-fit xl:pt-2;
 }
 
 .close {
   @apply h-6;
+}
+
+.cardBottom {
+  @apply flex justify-between mt-9 mb-6 px-5
+  items-center md:px-0 md:justify-start md:gap-x-3 md:mt-6 md:mb-8;
+}
+
+.menuOpen {
+  @apply xl:mt-0;
 }
