@@ -57,6 +57,7 @@ export function Card({ tour }: ICardProps) {
                 backgroundImage: `url(${Checked})`,
                 backgroundRepeat: 'no-repeat',
               }}
+              key={tour.id}
             >
               {item}
             </li>
@@ -68,6 +69,7 @@ export function Card({ tour }: ICardProps) {
             <div
               className='leading-5 text-time-grey bg-time-bg 
             rounded-xl w-[64px] h-6 text-center pt-[3px]'
+              key={tour.id}
             >
               {arr.length <= 4 || isTimeOpen ? (
                 time
