@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nevatrip-test-task/static/css/main.a4d64668.css",
-    "main.js": "/nevatrip-test-task/static/js/main.3a8e04b6.js",
+    "main.js": "/nevatrip-test-task/static/js/main.e849267d.js",
     "static/media/image_4.png": "/nevatrip-test-task/static/media/image_4.c49d9db2200eda5cf82f.png",
     "static/media/image_3.png": "/nevatrip-test-task/static/media/image_3.5c21e45d6b13ebe12349.png",
     "static/media/image_5.png": "/nevatrip-test-task/static/media/image_5.cf475d3f691733d9bb12.png",
@@ -11,10 +11,10 @@
     "index.html": "/nevatrip-test-task/index.html",
     "static/media/checked.svg": "/nevatrip-test-task/static/media/checked.29b8ed3cffe65eb9f131583f5468a1cb.svg",
     "main.a4d64668.css.map": "/nevatrip-test-task/static/css/main.a4d64668.css.map",
-    "main.3a8e04b6.js.map": "/nevatrip-test-task/static/js/main.3a8e04b6.js.map"
+    "main.e849267d.js.map": "/nevatrip-test-task/static/js/main.e849267d.js.map"
   },
   "entrypoints": [
     "static/css/main.a4d64668.css",
-    "static/js/main.3a8e04b6.js"
+    "static/js/main.e849267d.js"
   ]
 }
