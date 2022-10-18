@@ -1,0 +1,11 @@
+.timeMenu {
+  @apply flex flex-wrap gap-2 overflow-hidden pr-6 pl-12;
+}
+
+.open {
+  @apply h-fit;
+}
+
+.close {
+  @apply h-6;
+}

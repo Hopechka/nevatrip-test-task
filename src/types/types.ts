@@ -7,5 +7,5 @@ export interface ITours {
   schedule: string[]
   category: string
   image: string
-  details: string
+  details?: string
 }

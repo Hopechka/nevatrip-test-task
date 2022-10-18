@@ -1,6 +1,6 @@
 import { ITours } from '../types/types'
 
-export const products: ITours[] = [
+export const tours: ITours[] = [
   {
     id: 1,
     title: 'АКЦИЯ - Обзорная экскурсия по рекам и каналам  с остановками Hop on Hop Off 2019',
@@ -20,7 +20,7 @@ export const products: ITours[] = [
     duration: '2 часа',
     schedule: ['12:00', '12:00', '12:00', '12:00'],
     category: 'НОВИНКА',
-    image: 'image_1',
+    image: 'image_2',
     details: '1200 р на причале'
   },
   {
@@ -31,7 +31,7 @@ export const products: ITours[] = [
     duration: '2 часа',
     schedule: ['12:00', '12:00', '12:00'],
     category: 'НОВИНКА',
-    image: 'image_2',
+    image: 'image_3',
     details: '1200 р на причале'
   },
   {
@@ -42,7 +42,7 @@ export const products: ITours[] = [
     duration: '2 часа',
     schedule: ['12:00', '12:00', '12:00', '12:00'],
     category: 'НОВИНКА',
-    image: 'image_3',
+    image: 'image_4',
     details: '1200 р на причале'
   },
   {
@@ -51,10 +51,9 @@ export const products: ITours[] = [
     price: 900,
     description: ['Билет на целый день', 'Неограниченное число катаний', '6 остановок у главных достопримечательностей', 'Ближайший рейс сегодня'],
     duration: '2 часа',
-    schedule: ['12:00', '12:00', '12:00', '12:00', '12:00'],
+    schedule: ['12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00'],
     category: 'НОВИНКА',
-    image: 'image_4',
-    details: '1200 р на причале'
+    image: 'image_5',
   },
 
 ]
