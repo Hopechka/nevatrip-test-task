@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/nevatrip-test-task/task-part1/static/css/main.a4d64668.css",
-    "main.js": "/nevatrip-test-task/task-part1/static/js/main.70e835c4.js",
-    "static/media/image_4.png": "/nevatrip-test-task/task-part1/static/media/image_4.c49d9db2200eda5cf82f.png",
-    "static/media/image_3.png": "/nevatrip-test-task/task-part1/static/media/image_3.5c21e45d6b13ebe12349.png",
-    "static/media/image_5.png": "/nevatrip-test-task/task-part1/static/media/image_5.cf475d3f691733d9bb12.png",
-    "static/media/image_2.png": "/nevatrip-test-task/task-part1/static/media/image_2.90fd1b7b56bcfe5a9dfa.png",
-    "static/media/image_1.png": "/nevatrip-test-task/task-part1/static/media/image_1.010a96a235b47624b318.png",
-    "static/media/clock.svg": "/nevatrip-test-task/task-part1/static/media/clock.817fd541b4e0f13a7c9558d206a5d44d.svg",
-    "index.html": "/nevatrip-test-task/task-part1/index.html",
-    "static/media/checked.svg": "/nevatrip-test-task/task-part1/static/media/checked.d550bca2426538e499a66b0fab58ca39.svg",
-    "main.a4d64668.css.map": "/nevatrip-test-task/task-part1/static/css/main.a4d64668.css.map",
-    "main.70e835c4.js.map": "/nevatrip-test-task/task-part1/static/js/main.70e835c4.js.map"
+    "main.css": "/nevatrip-test-task/static/css/main.a4d64668.css",
+    "main.js": "/nevatrip-test-task/static/js/main.30c05488.js",
+    "static/media/image_4.png": "/nevatrip-test-task/static/media/image_4.c49d9db2200eda5cf82f.png",
+    "static/media/image_3.png": "/nevatrip-test-task/static/media/image_3.5c21e45d6b13ebe12349.png",
+    "static/media/image_5.png": "/nevatrip-test-task/static/media/image_5.cf475d3f691733d9bb12.png",
+    "static/media/image_2.png": "/nevatrip-test-task/static/media/image_2.90fd1b7b56bcfe5a9dfa.png",
+    "static/media/image_1.png": "/nevatrip-test-task/static/media/image_1.010a96a235b47624b318.png",
+    "static/media/clock.svg": "/nevatrip-test-task/static/media/clock.817fd541b4e0f13a7c9558d206a5d44d.svg",
+    "index.html": "/nevatrip-test-task/index.html",
+    "static/media/checked.svg": "/nevatrip-test-task/static/media/checked.d550bca2426538e499a66b0fab58ca39.svg",
+    "main.a4d64668.css.map": "/nevatrip-test-task/static/css/main.a4d64668.css.map",
+    "main.30c05488.js.map": "/nevatrip-test-task/static/js/main.30c05488.js.map"
   },
   "entrypoints": [
     "static/css/main.a4d64668.css",
-    "static/js/main.70e835c4.js"
+    "static/js/main.30c05488.js"
   ]
 }
