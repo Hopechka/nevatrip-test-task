@@ -1,34 +1,50 @@
 # nevatrip-test-task
 
-## 1. Верстка блока
+[Technical task-2](https://bitbucket.org/nevatrip/test-task/src/master/README.md)
 
-* [Deploy](https://hopechka.github.io/nevatrip-test-task/)
-* [Technical task](https://github.com/Nevatrip/layout-test-task)
+## 1. Билеты на событие
 
-Framework:
+### Вопрос 1.1:
 
-* React
-* Tailwindcss
+**Events_table**
 
-Tools:
+id  | event_id  | event_date          | ticket_adult_price  | ticket_adult_quantity  | ticket_kid_price  | ticket_kid_quantity  | ticket_discount_price  | ticket_discount_quantity  | group_factor | ticket_option_price | ticket_option_quantity | barcode   | user_id  | equal_price  | created
+:-: | :-------: | :-----------------: | :-----------------: | :--------------------: | :---------------: | :------------------: | :-------------------:  | :----------------------:  | :----------: | :-----------------: | :--------------------: | :------:  | :------: | :----------: | :-----------------:
+1   | 003       | 2021-08-21 13:00:00 | 700                 | 1                      | 450               | 0                    | 500                    | 0                         | 0            | null                | 0                      | 11111111  | 00451    | 700          | 2021-01-11 13:22:09
+2   | 006       | 2021-07-29 18:00:00 | 1000                | 0                      | 800               | 2                    | 700                    | 1                         | 0            | null                | 0                      | 22222222  | 00364    | 1600         | 2021-01-12 16:32:08
+3   | 003       | 2021-08-15 17:00:00 | 700                 | 4                      | 450               | 3                    | 500                    | 2                         | 1            | null                | 0                      | 33333333  | 00015    | 4120         | 2021-01-13 10:08:45
 
-* Typescript
+Где
 
-## 2. Таблица на странице
+* ```ticket_discount_price``` - цена за льготный билет
+* ```ticket_discount_quantity``` - количество льготных билетов
+* ```group_factor``` - индикатор, является ли билет групповым. Проверяется на заданное условие(сумма всех билетов по строке текущего заказа), если сумма больше или равна заданному условию, возвращает 1(true), при этом алгоритом делает пересчет итоговой суммы с учетом заданного коэфициента.
+                        (для примера в таблице, в строке 3 использовала гупповой коэфициент равный 0.8)
+* ```ticket_option_price``` - если будут появляться разовые типы билетов(специальные предложения например), в этот столбец можно внести индвидуальный прайс
+* ```ticket_option_quantity``` - количество билетов со специальным предложением
+* ```user_id``` - id заказа
 
-* [Technical task](https://github.com/Nevatrip/layout-test-task)
+### Вопрос 1.2:
 
-Предлагаю: 
-1. Добавить: ```table {table-layout: fixed;}```
-2. Чтобы убрать скролл:  ```.blog  {overflow-x: hidden;} ```
-3. 
- ```
-td span {
-  display: inline-block;
-  width: 100%;
-}
+**Tickets_table**
 
-td {
-  word-wrap: break-word;
-}
- ```
+id  |user_id  | ticket_type                | barcode_ticket   |
+:-: |:-----:  | :----------------------:   | :-------------:  |
+1   |00015    | ticket_adult_quantity      | 33333333-1       |
+2   |00015    | ticket_adult_quantity      | 33333333-2       |
+3   |00015    | ticket_adult_quantity      | 33333333-3       |
+4   |00015    | ticket_adult_quantity      | 33333333-4       |
+5   |00015    | ticket_kid_quantity        | 33333333-5       |
+6   |00015    | ticket_kid_quantity        | 33333333-6       |
+7   |00015    | ticket_kid_quantity        | 33333333-7       |
+8   |00015    | ticket_discount_quantity   | 33333333-8       |
+9   |00015    | ticket_discount_quantity   | 33333333-9       |
+
+Где
+
+* ```id``` - инкрементальный порядковый номер заказа
+* ```user_id``` - id заказа, присвоеное в таблице ```Events_table```
+* ```ticket_type``` - тип билета, наименование типа взято из шапки таблицы ```Events_table``` в соответствии с колонкой,
+строка дублируется столько раз, сколько указано в столбце с тем же названием в таблице ```Events_table```
+* ```barcode_ticket``` - основа для баркода взята из таблицы ```Events_table``` столбец ```barcode```, для каждого билета формируется индивидуальный баркод исходя из общего количества билетов по заказу,
+к концу каждого основания баркода добавляется через дифис номер по порядку.
