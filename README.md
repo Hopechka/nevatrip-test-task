@@ -1,9 +1,12 @@
 # nevatrip-test-task
 
+# Первая часть задания
+
 ## 1. Верстка блока
 
 * [Deploy](https://hopechka.github.io/nevatrip-test-task/)
 * [Тестовое задание](https://github.com/Nevatrip/layout-test-task)
+* Разработака в ветке develop
 
 Framework:
 
@@ -32,3 +35,6 @@ td {
   word-wrap: break-word;
 }
  ```
+# Вторая часть задания
+
+* Разработака в ветке tickets
