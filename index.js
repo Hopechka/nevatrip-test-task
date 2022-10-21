@@ -1,11 +1,11 @@
 const container = document.getElementById('container');
 const route = document.getElementById('route');
-const eventTimeAll = document.getElementById('eventTimeAll');
 const selectTimeAll = document.getElementById('timeAll');
 const eventTimeBack = document.querySelector('.eventTimeBack');
 const selectTimeBack = document.getElementById('timeBack');
 const num = document.getElementById('num');
 const btnTotal = document.querySelector('.btn-total');
+
 const departureTimeA = ['18:00', '18:30', '18:45', '19:00','19:15','21:00'];
 const departureTimeB = ['18:30', '18:45', '19:00','19:15','19:35', '21:50','21:55'];
 const departureLocalTimeA = departureTimeA.map(time=>getCorrectTime(time))
@@ -32,22 +32,22 @@ class Trip{
       container.append(div);
   }
 
-  createEventTimeAll(direction){
-    let arr
-    let valName
+  createEventTimeOneWay(direction){
+    let arr, dirName
+
     if(direction !== 'из B в A'){
       arr = departureLocalTimeA
-      valName = 'из A в B'
+      dirName = 'из A в B'
     }else{
       arr = departureLocalTimeB
-      valName = 'из B в A'
+      dirName = 'из B в A'
     }
 
     selectTimeAll.innerHTML = '<option value="выберите время">выберите время</option>'
     arr.forEach(time => {
         let option = document.createElement('option')
         option.setAttribute('value', `${time}`)
-        option.innerHTML = `${getStringTime(time)}(${valName})`
+        option.innerHTML = `${getStringTime(time)}(${dirName})`
         selectTimeAll.append(option)
       })
   }
@@ -57,7 +57,7 @@ class Trip{
     selectTimeBack.innerHTML = '<option value="выберите время">выберите время обратно</option>'
     departureLocalTimeB.forEach((time,index) => {
       if(index >= gapIndex){
-        let option = document.createElement('option')
+      let option = document.createElement('option')
       option.setAttribute('value', `${time}`)
       option.innerHTML = `${getStringTime(time)}(из B в A)`
       selectTimeBack.append(option)
@@ -66,21 +66,8 @@ class Trip{
   }
 }
 
-function getHandleCount(){
-  message.innerHTML = `<p>Вы выбрали <strong>${this.num}</strong> билета по маршруту <strong>${this.route}</strong> стоимостью <strong>${this.num*this.ticketPrice}руб.</strong></p>
-    <p>Это путешествие займет у вас <strong>${this.duration}</strong> минут.</p>
-    <p>Теплоход отправляется в <strong>${this.start}</strong>, и прибудет в конечный пункт <strong>${this.finish}</strong>.</p>`;
-  message.classList.add('active')
-}
-
 const yourTrip = new Trip()
 yourTrip.createElement()
-
-function getStringTime(tourTime){
-  const tourHours = new Date(tourTime).getHours() < 10 ? `0${new Date(tourTime).getHours()}`: new Date(tourTime).getHours()
-  const tourMinutes = new Date(tourTime).getMinutes() < 10 ? `0${new Date(tourTime).getMinutes()}`: new Date(tourTime).getMinutes()
- return  `${tourHours}:${tourMinutes}`
-}
 
 function getCorrectTime(time){
   const hour = +time.slice(0,2)
@@ -91,7 +78,20 @@ function getCorrectTime(time){
   return new Date(tourTimeStart)
 }
 
-function calculateDuringTime(timeOwenWay, roundTrip=false){
+function getResultMessage(){
+  message.innerHTML = `<p>Вы выбрали <strong>${this.num}</strong> билета по маршруту <strong>${this.route}</strong> стоимостью <strong>${this.num*this.ticketPrice}руб.</strong></p>
+    <p>Это путешествие займет у вас <strong>${this.duration}</strong> минут.</p>
+    <p>Теплоход отправляется в <strong>${this.start}</strong>, и прибудет в конечный пункт <strong>${this.finish}</strong>.</p>`;
+  message.classList.add('active')
+}
+
+function getStringTime(tourTime){
+  const tourHours = new Date(tourTime).getHours() < 10 ? `0${new Date(tourTime).getHours()}`: new Date(tourTime).getHours()
+  const tourMinutes = new Date(tourTime).getMinutes() < 10 ? `0${new Date(tourTime).getMinutes()}`: new Date(tourTime).getMinutes()
+ return  `${tourHours}:${tourMinutes}`
+}
+
+function calculateDurationTime(timeOwenWay, roundTrip=false){
   const duringOneTrip = 50;
   const t = new Date(timeOwenWay)
   const roundTripTime = new Date(yourTrip.timeStampStart)
@@ -123,23 +123,23 @@ function selectRoute(){
   }
 
   if(getValue !== 'из B в A'){
-    yourTrip.createEventTimeAll('из A в B')
+    yourTrip.createEventTimeOneWay('из A в B')
   }else{
-    yourTrip.createEventTimeAll('из B в A')
+    yourTrip.createEventTimeOneWay('из B в A')
   }
 }
 
 function selectTimeAhead(){
   const getValue = this.value;
   yourTrip.start = getStringTime(getValue)
-  yourTrip.finish = calculateDuringTime(getValue)
+  yourTrip.finish = calculateDurationTime(getValue)
   yourTrip.createEventTimeBack(getValue)
   yourTrip.timeStampStart = getValue
 }
 
 function chooseTimeBack(){
   const getValue = this.value;
-  yourTrip.finish = calculateDuringTime(getValue, true)
+  yourTrip.finish = calculateDurationTime(getValue, true)
 }
 
 function getTicketQuantity(){
@@ -155,5 +155,6 @@ selectTimeBack.addEventListener('change', chooseTimeBack);
 num.addEventListener('change', getTicketQuantity);
 
 const message = document.querySelector('.alert')
-btnTotal.addEventListener('click', getHandleCount.bind(yourTrip))
+btnTotal.addEventListener('click', getResultMessage.bind(yourTrip))
+
 
