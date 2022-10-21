@@ -1,0 +1,31 @@
+#container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  gap: 10px;
+}
+
+#eventTimeAll {
+  display: flex;
+  gap: 4px;
+}
+
+.alert {
+  display: none;
+}
+
+.alert.active {
+  display: block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.eventTimeBack.active {
+  display: block;
+}
+
+.eventTimeBack {
+  display: none;
+}

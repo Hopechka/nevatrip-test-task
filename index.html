@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <title>Время из A в B</title>
+</head>
+
+<body>
+  <div id="container">
+    <div>
+      <label for="time">Выберите направление</label>
+      <select name="route" id="route" placeholder="направление">
+        <option value="выбор направления">выбор направления</option>
+        <option value="из A в B">из A в B</option>
+        <option value="из B в A">из B в A</option>
+        <option value="из A в B и обратно в А">из A в B и обратно в А</option>
+      </select>
+    </div>
+
+    <div id="eventTimeAll">
+      <label for="time">Выберите время</label>
+      <select name="time" id="timeAll">
+        <option value="выберите время">выберите время</option>
+      </select>
+    </div>
+
+    <div class="eventTimeBack">
+      <label for="time">Выберите время обратно</label>
+      <select name="timeBack" id="timeBack">
+        <option value="выберите время">выберите время обратно</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="num">Количество билетов</label>
+      <input id="num" placeholder="Введите количество" />
+    </div>
+
+    <button class="btn-total">Посчитать</button>
+  </div>
+  <script defer src="index.js"></script>
+</body>
+
+</html>
